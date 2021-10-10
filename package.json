@@ -1,0 +1,12 @@
+{
+  "name": "deta-starter",
+  "version": "1.0.0",
+  "description": "An Waline starter repository for deploy to deta",
+  "main": "index.js",
+  "keywords": ["Waline", "Comment"],
+  "author": "lizheming<i@imnerd.org>",
+  "dependencies": {
+    "@waline/vercel": "^1.1.2",
+    "express": "^4.17.1"
+  }
+}

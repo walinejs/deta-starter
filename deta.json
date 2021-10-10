@@ -1,0 +1,21 @@
+{
+	"name": "Waline Example",
+	"description": "An Waline starter example for deploy to deta",
+	"env": [
+		{
+			"key": "LEAN_ID",
+			"description": "Your LeanCloud ID",
+			"required": false 
+		},
+		{
+			"key": "LEAN_KEY",
+			"description": "Your LeanCloud KEY",
+			"required": false 
+		},
+		{
+			"key": "LEAN_MASTER_KEY",
+			"description": "Your LeanCloud Master Key",
+			"required": false 
+		}
+	]
+}
