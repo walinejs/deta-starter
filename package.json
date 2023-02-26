@@ -1,12 +1,14 @@
 {
-  "name": "deta-starter",
+  "name": "deta-space",
   "version": "1.0.0",
-  "description": "An Waline starter repository for deploy to deta",
+  "description": "An Waline app repository for deta",
   "main": "index.js",
   "keywords": ["Waline", "Comment"],
+  "scripts": {
+    "postinstall": "curl -sf https://gobinaries.com/tj/node-prune | sh && node-prune"
+  },
   "author": "lizheming<i@imnerd.org>",
   "dependencies": {
-    "@waline/vercel": "^1.2.0",
-    "express": "^4.17.1"
+    "@waline/vercel": "1.26.3-deta-alpha.0"   
   }
 }

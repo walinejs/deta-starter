@@ -1,9 +1,9 @@
-const express = require('express');
 const Waline = require('@waline/vercel');
-const app = express();
-const callback = Waline({ 
-  env: 'deta'
+
+const app = Waline({
+  async postSave(comment) {
+    // do what ever you want after save comment
+  },
 });
 
-app.all(/.*/, callback);
-module.exports = app;
+require('http').createServer(app).listen(process.env.PORT || 3000);

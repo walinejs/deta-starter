@@ -1,0 +1,197 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+app_name: Waline
+icon: ./logo.png
+micros:
+  - name: waline
+    primary: true
+    src: ./
+    engine: nodejs16
+    run: "node index.js"
+    public_routes:
+    - /*
+    presets:
+      env:
+        - name: LEAN_ID
+          description: LeanCloud Application ID
+        - name: LEAN_KEY
+          description: LeanCloud Application Key
+        - name: LEAN_MASTER_KEY
+          description: LeanCloud Application Master Key
+        - name: LEAN_SERVER
+          description: LeanCloud server address if you're leancloud china user
+        - name: SITE_NAME
+          description: site name
+        - name: SITE_URL
+          description: site url
+        - name: LOGIN
+          description: User need login before comment when LOGIN=force
+        - name: DISABLE_USERAGENT
+          description: wether hide the user agent of commenter. Default value is false
+        - name: DISABLE_REGION
+          description: wether hide commenter's region. Default value is false
+        - name: DISABLE_AUTHOR_NOTIFY
+          description: wether disable author notification
+        - name: AVATAR_PROXY
+          description: Avatar proxy service url. You can set false to disable it
+        - name: GRAVATAR_STR
+          description: Gravatar render string，base on nunjucks template
+        - name: LEVELS
+          description: Give each user a rating label based on the number of comments
+        - name: IPQPS
+          description: IP-based comment posting frequency limit in seconds. Set to 0 for no
+            limit
+        - name: SECURE_DOMAINS
+          description: Secure Domains config. Supports multiple domain with Comma separated
+        - name: AKISMET_KEY
+          description: Akismet antispam service key, set false if you wanna close it.
+        - name: COMMENT_AUDIT
+          description: Comment audit switcher. When enabled, every comment needs to be approved
+            by admin, so hint in placeholder is recommended
+        - name: RECAPTCHA_V3_KEY
+          description: reCAPTCHA V3 key,should set along with client
+        - name: RECAPTCHA_V3_SECRET
+          description: reCAPTCHA V3 secret for server.
+        - name: MARKDOWN_CONFIG
+          description: MarkdownIt Config
+        - name: MARKDOWN_HIGHLIGHT
+          description: Whether enable highlight
+        - name: MARKDOWN_EMOJI
+          description: Whether enable emoji
+        - name: MARKDOWN_SUB
+          description: Whether enable subscript
+        - name: MARKDOWN_SUP
+          description: Whether enable superscript
+        - name: MARKDOWN_TEX
+          description: Service to parse math, mathjax katex and false are supported
+        - name: MARKDOWN_MATHJAX
+          description: MathJax Options
+        - name: MARKDOWN_KATEX
+          description: Katex Options
+        - name: SMTP_SERVICE
+          description: SMTP mail service provider
+        - name: SMTP_HOST
+          description: SMTP server address
+        - name: SMTP_PORT
+          description: SMTP server port
+        - name: SMTP_USER
+          description: SMTP username
+        - name: SMTP_PASS
+          description: SMTP Password.
+        - name: SMTP_SECURE
+          description: SMTP connect with SSL
+        - name: SENDER_NAME
+          description: Customize sender name
+        - name: SENDER_EMAIL
+          description: Customize sender email
+        - name: MONGO_DB
+          description: MongoDB database name
+          default: ''
+        - name: MONGO_USER
+          description: MongoDB server username
+          default: ''
+        - name: MONGO_PASSWORD
+          description: MongoDB server password
+          default: ''
+        - name: MONGO_HOST
+          description: MongoDB server address, support array format
+          default: 127.0.0.1
+        - name: MONGO_PORT
+          description: MongoDB server port, support array format
+          default: '27017'
+        - name: MONGO_REPLICASET
+          description: MongoDB replica set
+          default: ''
+        - name: MONGO_AUTHSOURCE
+          description: MongoDB auth source
+          default: ''
+        - name: MONGO_OPT_SSL
+          description: use SSL connection
+          default: 'false'
+        - name: MYSQL_DB
+          description: MySQL database name
+          default: ''
+        - name: MYSQL_USER
+          description: MySQL server username
+          default: ''
+        - name: MYSQL_PASSWORD
+          description: MySQL server password
+          default: ''
+        - name: MYSQL_HOST
+          description: MySQL server address
+          default: 127.0.0.1
+        - name: MYSQL_PORT
+          description: MySQL server port
+          default: '3306'
+        - name: MYSQL_PREFIX
+          description: MySQL table prefix
+          default: wl_
+        - name: MYSQL_CHARSET
+          description: MySQL table charset
+          default: utf8mb4
+        - name: MYSQL_SSL
+          description: whether use SSL connection
+          default: 'false'
+        - name: TIDB_DB
+          description: TiDB database name
+          default: ''
+        - name: TIDB_USER
+          description: TiDB server username
+          default: ''
+        - name: TIDB_PASSWORD
+          description: TiDB server password
+          default: ''
+        - name: TIDB_HOST
+          description: TiDB server address
+          default: 127.0.0.1
+        - name: TIDB_PORT
+          description: TiDB server port
+          default: '4000'
+        - name: TIDB_PREFIX
+          description: TiDB table prefix
+          default: wl_
+        - name: TIDB_CHARSET
+          description: TiDB table charset
+          default: utf8mb4
+        - name: JWT_TOKEN
+          description: Random String for login token generator
+          default: ''
+        - name: PG_DB
+          description: PostgreSQL database name
+          default: ''
+        - name: PG_USER
+          description: PostgreSQL server username
+          default: ''
+        - name: PG_PASSWORD
+          description: PostgreSQL server password
+          default: ''
+        - name: PG_HOST
+          description: PostgreSQL server address
+          default: 127.0.0.1
+        - name: PG_PORT
+          description: PostgreSQL server port
+          default: '3211'
+        - name: PG_PREFIX
+          description: PostgreSQL table prefix
+          default: wl_
+        - name: PG_SSL
+          description: set to true to use SSL connection
+          default: 'false'
+        - name: GITHUB_TOKEN
+          description: Personal access tokens
+          default: ''
+        - name: GITHUB_REPO
+          description: repository name, such as walinejs/waline
+          default: ''
+        - name: GITHUB_PATH
+          description: The data storage directory, such as data means it is stored in the data directory, root directory by default
+          default: ''
+        - name: OAUTH_URL
+          description: OAuth Social Login Service URL. You can build your own auth
+        - name: WEBHOOK
+          description: You can set a Webhook URL that will be triggered when you have new comment.
+        - name: WALINE_ADMIN_MODULE_ASSET_URL
+          description: Waline admin link
+        - name: IP2REGION_DB
+          description: customized IP query library path
+          
