@@ -24,6 +24,8 @@ micros:
           description: site name
         - name: SITE_URL
           description: site url
+        - name: AUTHOR_EMAIL
+          description: The blogger’s email, used to judge whether posted comment is posted by the blogger. If it is posted by the blogger, there will be no reminder notification.
         - name: LOGIN
           description: User need login before comment when LOGIN=force
         - name: DISABLE_USERAGENT
