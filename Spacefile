@@ -10,6 +10,8 @@ micros:
     run: "node index.js"
     public_routes:
     - /*
+    commands:
+    - curl -sf https://gobinaries.com/tj/node-prune | sh && node-prune
     presets:
       env:
         - name: LEAN_ID

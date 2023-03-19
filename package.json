@@ -4,11 +4,8 @@
   "description": "An Waline app repository for deta",
   "main": "index.js",
   "keywords": ["Waline", "Comment"],
-  "scripts": {
-    "postinstall": "curl -sf https://gobinaries.com/tj/node-prune | sh && node-prune"
-  },
   "author": "lizheming<i@imnerd.org>",
   "dependencies": {
-    "@waline/vercel": "1.26.5-deta"   
+    "@waline/vercel": "1.26.5"   
   }
 }
