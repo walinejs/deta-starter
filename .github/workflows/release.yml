@@ -15,13 +15,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
+
       # - name: 
       #   run:
       #   - SPACE_VERSIION=$(node -e "console.log(require('./package.json').dependencies['@waline/vercel']);")
 
       - name: Release
-        uses: lizheming/deta-action@1.0.0-alpha.0
+        uses: lizheming/deta-action@1.0.0-alpha.1
         # env:
 
         with:
