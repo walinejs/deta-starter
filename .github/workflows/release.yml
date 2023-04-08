@@ -21,7 +21,7 @@ jobs:
       #   - SPACE_VERSIION=$(node -e "console.log(require('./package.json').dependencies['@waline/vercel']);")
 
       - name: Release
-        uses: lizheming/deta-action@1.0.0-alpha.4
+        uses: lizheming/deta-action@1.0.0-alpha.5
         # env:
 
         with:
