@@ -1,0 +1,27 @@
+name: 'Deta Release'
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_notes:
+        type: string
+  # push:
+  #   branches:
+  #     - main
+
+jobs:
+  path-context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      # - name: 
+      #   run:
+      #   - SPACE_VERSIION=$(node -e "console.log(require('./package.json').dependencies['@waline/vercel']);")
+
+      - name: Release
+        uses: lizheming/deta-action@1.0.0-alpha.0
+        with:
+          access_token: ${{ secret.space_access_token }}
+          
