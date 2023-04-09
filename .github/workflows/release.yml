@@ -20,11 +20,11 @@ jobs:
         uses: actions/setup-node@v3
 
       - name: Export Version 
-        run:
-        - SPACE_VERSION=$(node -e "console.log(require('./package.json').dependencies['@waline/vercel'] + '-test');")
-        - SPACE_NOTES=$( [ -n ${{ secrets.notes }} ] && echo ${{ secrets.notes }} || "Full ChangeLog: https://github.com/walinejs/waline/blob/main/CHANGELOG.md" )
-        - echo "Which version will be released？=> $SPACE_VERSION ;"
-        - echo "SAPCE_NOTES: $SPACE_NOTES"
+        run: |
+          SPACE_VERSION=$(node -e "console.log(require('./package.json').dependencies['@waline/vercel'] + '-test');")
+          SPACE_NOTES=$( [ -n ${{ secrets.notes }} ] && echo ${{ secrets.notes }} || echo "Full ChangeLog: https://github.com/walinejs/waline/blob/main/CHANGELOG.md" )
+          echo "Which version will be released？=> $SPACE_VERSION ;"
+          echo "SAPCE_NOTES: $SPACE_NOTES"
 
       - name: Release
         uses: lizheming/deta-action@1.0.0-beta.1
