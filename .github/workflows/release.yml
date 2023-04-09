@@ -25,15 +25,15 @@ jobs:
           SPACE_NOTES=$( [ -n ${{ secrets.notes }} ] && echo ${{ secrets.notes }} || echo "Full ChangeLog: https://github.com/walinejs/waline/blob/main/CHANGELOG.md" )
           echo "Which version will be released？=> $SPACE_VERSION ;"
           echo "SAPCE_NOTES: $SPACE_NOTES"
+          echo "SPACE_VERSION=$SPACE_VERSION" >> $GITHUB_ENV
+          echo "SPACE_NOTES=$SPACE_NOTES" >> $GITHUB_ENV
 
       - name: Release
         uses: lizheming/deta-action@1.0.0-beta.1
-        # env:
-        #   space_version: SPACE_VERSION
-        #   space_notes: SPACE_NOTES
         with:
           access_token: ${{ secrets.space_access_token }}
           id: ${{ secrets.space_id }}
+          version: ${{ env.SPACE_VERSION }}
+          notes: ${{ env.SPACE_NOTES }}
           # listed: true
-          # notes: ${{ inputs.notes }} 
           
