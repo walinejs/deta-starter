@@ -3,7 +3,7 @@ name: 'Deta Release'
 on:
   workflow_dispatch:
     inputs:
-      release_notes:
+      notes:
         type: string
   # push:
   #   branches:
@@ -16,15 +16,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # - name: 
-      #   run:
-      #   - SPACE_VERSIION=$(node -e "console.log(require('./package.json').dependencies['@waline/vercel']);")
+      - name: Node Env
+        uses: actions/setup-node@v3
+
+      - name: Export Version 
+        run:
+        - SPACE_VERSION=$(node -e "console.log(require('./package.json').dependencies['@waline/vercel'] + '-test');")
+        - SPACE_NOTES=$( [ -n ${{ secrets.notes }} ] && echo ${{ secrets.notes }} || "Full ChangeLog: https://github.com/walinejs/waline/blob/main/CHANGELOG.md" )
+        - echo "Which version will be released？=> $SPACE_VERSION ;"
+        - echo "SAPCE_NOTES: $SPACE_NOTES"
 
       - name: Release
         uses: lizheming/deta-action@1.0.0-beta.1
         # env:
-
+        #   space_version: SPACE_VERSION
+        #   space_notes: SPACE_NOTES
         with:
           access_token: ${{ secrets.space_access_token }}
           id: ${{ secrets.space_id }}
+          # listed: true
+          # notes: ${{ inputs.notes }} 
           
