@@ -6,6 +6,6 @@
   "keywords": ["Waline", "Comment"],
   "author": "lizheming<i@imnerd.org>",
   "dependencies": {
-    "@waline/vercel": "1.30.4"   
+    "@waline/vercel": "1.30.5"   
   }
 }
