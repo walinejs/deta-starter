@@ -56,6 +56,10 @@ micros:
           description: reCAPTCHA V3 key,should set along with client
         - name: RECAPTCHA_V3_SECRET
           description: reCAPTCHA V3 secret for server.
+        - name: TURNSTILE_KEY
+          description: Turnstile key,should set along with client
+        - name: TURNSTILE_SECRET
+          description: Turnstile secret for server
         - name: MARKDOWN_CONFIG
           description: MarkdownIt Config
         - name: MARKDOWN_HIGHLIGHT
