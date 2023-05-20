@@ -60,6 +60,10 @@ micros:
           description: Turnstile key,should set along with client
         - name: TURNSTILE_SECRET
           description: Turnstile secret for server
+        - name: TURNSTILE_KEY
+          description: Turnstile key,should set along with client
+        - name: TURNSTILE_SECRET
+          description: Turnstile secret for server
         - name: MARKDOWN_CONFIG
           description: MarkdownIt Config
         - name: MARKDOWN_HIGHLIGHT
