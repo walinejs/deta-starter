@@ -202,4 +202,13 @@ micros:
           description: Waline admin link
         - name: IP2REGION_DB
           description: customized IP query library path
+        - name: MAIL_SUBJECT
+          description: Notification mail title when comment replied
+        - name: MAIL_TEMPLATE
+          description: Notification mail content when comment replied
+        - name: MAIL_SUBJECT_ADMIN
+          description: Notification mail title when your site has a new comment
+        - name: MAIL_TEMPLATE_ADMIN
+          description: Notification mail content when your site has a new comment
+    
           
