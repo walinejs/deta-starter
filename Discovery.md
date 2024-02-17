@@ -1,9 +1,11 @@
 ---
+app_name: "Waline"
 title: "Waline"
 tagline: "A Simple, Safe Comment System"
 theme_color: "#4E9DEF"
 git: "https://github.com/walinejs/waline"
 homepage: "https://waline.js.org/en"
+open_code: true
 ---
 
 A simple comment system with backend support.
