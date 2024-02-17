@@ -11,7 +11,7 @@ on:
       - master
 
 jobs:
-  path-context:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,7 +30,7 @@ jobs:
           echo "SPACE_NOTES=$SPACE_NOTES" >> $GITHUB_ENV
 
       - name: Release
-        uses: lizheming/deta-action@1.1.0
+        uses: lizheming/deta-action@1.1.1
         with:
           access_token: ${{ secrets.space_access_token }}
           id: ${{ secrets.space_id }}
