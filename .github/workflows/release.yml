@@ -30,7 +30,7 @@ jobs:
           echo "SPACE_NOTES=$SPACE_NOTES" >> $GITHUB_ENV
 
       - name: Release
-        uses: lizheming/deta-action@1.0.1
+        uses: lizheming/deta-action@1.0.2
         with:
           access_token: ${{ secrets.space_access_token }}
           id: ${{ secrets.space_id }}
